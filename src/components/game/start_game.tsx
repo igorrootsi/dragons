@@ -4,6 +4,7 @@ import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Ta
 import { Chip, Avatar } from 'material-ui';
 import { KnightChip } from '../KnightChip';
 import { DragonChip } from '../DragonChip';
+import Typography from 'material-ui/Typography/Typography';
 
 interface Knight {
   name:      string;
@@ -47,8 +48,10 @@ export class StartGame extends React.Component<{}, StartGameState> {
     if (!this.state.gameId) return null;
 
     return <Grid container justify="center">
-      <Grid >
-        <h1>{ this.state.knight.name } vs Dragon</h1>
+      <Grid item>
+        <Typography type="display1">
+          { this.state.knight.name } vs Dragon
+        </Typography>
 
         <Table>
           <TableBody>
