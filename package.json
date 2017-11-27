@@ -4,19 +4,6 @@
   "main": "index.js",
   "repository": {},
   "license": "MIT",
-  "devDependencies": {
-    "@types/webpack-env": "^1.13.0",
-    "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^2.0.0-rc.2",
-    "html-webpack-plugin": "^2.28.0",
-    "react-hot-loader": "^3.0.0-beta.6",
-    "style-loader": "^0.13.1",
-    "ts-loader": "^2.0.0",
-    "typescript": "^2.1.5",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.3.0",
-    "webpack-hot-middleware": "^2.16.1"
-  },
   "scripts": {
     "start": "webpack-dev-server"
   },
@@ -29,6 +16,17 @@
     "normalize.css": "7.0.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "typeface-roboto": "0.0.45"
+    "typeface-roboto": "0.0.45",
+    "@types/webpack-env": "^1.13.0",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^2.0.0-rc.2",
+    "html-webpack-plugin": "^2.28.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.5",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0",
+    "webpack-hot-middleware": "^2.16.1"
   }
 }
