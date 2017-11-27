@@ -5,7 +5,7 @@ var path = require("path");
 module.exports = {
 	devtool: 'cheap-module-source-map',
 	entry: [
-		'react-hot-loader/patch',
+    'react-hot-loader/patch',
 		'./index.tsx'
 	],
 	output: {
@@ -26,12 +26,16 @@ module.exports = {
 			{
 				test: /\.css$/,
 				loader: ['style-loader', 'css-loader']
-			},
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader?name=public/fonts/[name].[ext]'
+      },
 		]
-	},
+  },
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NamedModulesPlugin(),
+    new webpack.NamedModulesPlugin(),
 		new HtmlWebpackPlugin({
 			inject: true,
 			template: 'index.html'

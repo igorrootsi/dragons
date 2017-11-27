@@ -1,15 +1,18 @@
 import * as React from 'react';
-import Kid from './kid';
 import './app.css';
 
+import { TopBar } from './components/TopBar';
+import { Main } from './components/Main';
+
 class App extends React.Component<{}, {}> {
-    render() {
-        return (
-            <div className="app">
-                Somethirqnqweqzqgaffrrq2553<Kid />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="app">
+        <TopBar />
+        <Main />
+      </div>
+    );
+  }
 }
 
 export default App;
