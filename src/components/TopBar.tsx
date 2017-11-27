@@ -10,7 +10,7 @@ export class TopBar extends React.Component {
       <AppBar position="static">
         <Toolbar>
           <Typography type="title" color="inherit">
-            Title
+            Dragons
           </Typography>
         </Toolbar>
       </AppBar>
