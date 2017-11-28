@@ -14,22 +14,11 @@ function fetchPerson({ params: { gender } }) {
 
 export const BrowserRouter = createBrowserRouter({
   routeConfig: makeRouteConfig(
-    <Route
-      Component={ App }
-    >
-      <Route
-        path="/gender"
-        Component={ SelectGenderScreen }
-      />
-      <Route
-        path="/browse/:gender"
-        Component={ BrowseScreen }
-        getData={ fetchPerson }
-      />
-      <Redirect
-        from="/"
-        to="/browse/girl"
-      />
+    <Route Component={ App } >
+      <Route path="/gender" Component={ SelectGenderScreen } />
+      <Route path="/browse/:gender" Component={ BrowseScreen } getData={ fetchPerson } />
+
+      <Redirect from="/" to="/gender" />
     </Route>,
   ),
 
