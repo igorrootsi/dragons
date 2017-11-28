@@ -16,6 +16,10 @@ export class TopBar extends React.Component {
             Dragons
           </Typography>
 
+          <Link to="/">
+            <Button color="contrast">Home</Button>
+          </Link>
+
           <Link to="/matches">
             <Button color="contrast">Matches</Button>
           </Link>

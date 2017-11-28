@@ -18,13 +18,13 @@ export class SelectGenderScreen extends React.Component<ISelectGenderScreenProps
           </Typography>
           <Grid container justify="center">
             <Grid item>
-              <Button fab onClick={ this.navigateTo.bind(this, 'boy') }>
+              <Button fab onClick={ this.navigateTo.bind(this, 'girl') }>
                 <Face />
               </Button>
             </Grid>
 
             <Grid item>
-              <Button fab onClick={ this.navigateTo.bind(this, 'girl') }>
+              <Button fab onClick={ this.navigateTo.bind(this, 'boy') }>
                 <TagFaces />
               </Button>
             </Grid>
