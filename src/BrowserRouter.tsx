@@ -5,6 +5,7 @@ import { createBrowserRouter, HttpError, makeRouteConfig, Redirect, Route } from
 import { App } from './app';
 import { BrowseScreen } from './components/BrowseScreen';
 import { SelectGenderScreen } from './components/SelectGenderScreen';
+import { MatchesScreen } from './components/MatchesScreen';
 
 function fetchPerson({ params: { gender } }) {
   return fetch('http://www.dragonsofmugloar.com/dating/api/profile/random?gender=' + gender)
@@ -17,6 +18,7 @@ export const BrowserRouter = createBrowserRouter({
     <Route Component={ App } >
       <Route path="/gender" Component={ SelectGenderScreen } />
       <Route path="/browse/:gender" Component={ BrowseScreen } getData={ fetchPerson } />
+      <Route path="/matches" Component={ MatchesScreen } />
 
       <Redirect from="/" to="/gender" />
     </Route>,

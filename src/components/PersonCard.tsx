@@ -13,9 +13,12 @@ import withStyles, { WithStyles } from 'material-ui/styles/withStyles';
 import Collapse from 'material-ui/transitions/Collapse';
 import Typography from 'material-ui/Typography';
 
+import { matches } from '../database';
+
 import { Block, Face, TagFaces } from 'material-ui-icons';
 
 import { IPerson } from '../interfaces/IPerson';
+import { MatchDialog } from './MatchDialog';
 
 function CardAvatar({ gender }) {
   return (
@@ -47,13 +50,13 @@ export interface IPersonCardProps extends WithStyles<keyof typeof styles> {
 }
 
 export interface IPersonCardState {
-  expanded: boolean;
+  isMatchDialogOpen: boolean;
 }
 
 // @ts-ignore:
 @withStyles(styles)
 export class PersonCard extends React.Component<IPersonCardProps, IPersonCardState> {
-  public state = { expanded: false };
+  public state = { isMatchDialogOpen: false };
 
   public render() {
     const { data: { person }, gender, classes, router } = this.props;
@@ -87,6 +90,11 @@ export class PersonCard extends React.Component<IPersonCardProps, IPersonCardSta
             </IconButton>
           </CardActions>
         </Card>
+
+        <MatchDialog
+          open={ this.state.isMatchDialogOpen }
+          onClick={ this.onDialogClick.bind(this) }
+        />
       </div>
     );
   }
@@ -95,9 +103,23 @@ export class PersonCard extends React.Component<IPersonCardProps, IPersonCardSta
     this.props.router.push(`/browse/${this.props.gender}`);
   }
 
+  private onDialogClick(action: string): void {
+    this.setState({ isMatchDialogOpen: false });
+
+    if (action === 'goToMatches') {
+      this.props.router.push(`/matches`);
+    } else {
+      this.props.router.push(`/browse/${this.props.gender}`);
+    }
+  }
+
   private like() {
-    if (this.props.data.person.likesYou) {
-      alert('Bingo');
+    const { data: { person } } = this.props;
+
+    if (person.likesYou) {
+      this.setState({ isMatchDialogOpen: true });
+      matches.push(person);
+
     } else {
       this.props.router.push(`/browse/${this.props.gender}`);
     }

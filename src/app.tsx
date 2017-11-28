@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './app.css';
 
+import './database.ts';
+
 import { TopBar } from './components/TopBar';
 
 export class App extends React.Component<{}, {}> {
@@ -10,6 +12,6 @@ export class App extends React.Component<{}, {}> {
         <TopBar />
         { this.props.children }
       </div>
-    )
+    );
   }
 }
