@@ -42,8 +42,7 @@ module.exports = {
 		})
 	],
 	devServer: {
-		hot: true
-		//Enable this if you want to never refresh (this allows hot-reloading app.tsx, but won't auto-refresh if you change index.tsx)
-		//hotOnly: true
+    hot: true,
+    historyApiFallback: true,
 	}
 };

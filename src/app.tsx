@@ -2,17 +2,14 @@ import * as React from 'react';
 import './app.css';
 
 import { TopBar } from './components/TopBar';
-import { Main } from './components/Main';
 
-class App extends React.Component<{}, {}> {
-  render() {
+export class App extends React.Component<{}, {}> {
+  public render() {
     return (
       <div className="app">
         <TopBar />
-        <Main />
+        { this.props.children }
       </div>
-    );
+    )
   }
 }
-
-export default App;

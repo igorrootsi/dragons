@@ -4,11 +4,11 @@ import 'typeface-roboto';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './app';
+import { BrowserRouter } from './BrowserRouter';
 
 ReactDOM.render(
     <AppContainer>
-        <App />
+        <BrowserRouter />
     </AppContainer>,
     document.getElementById('root') as HTMLElement
 );
@@ -18,9 +18,9 @@ interface RequireImport {
 }
 
 if (module.hot) {
-    module.hot.accept('./app', () => {
+    module.hot.accept('./BrowserRouter', () => {
         console.log('doing a app hot accept')
-        const NextApp = require<RequireImport>('./app').default
+        const NextApp = require<RequireImport>('./BrowserRouter').default
         ReactDOM.render(
             <AppContainer>
                 <NextApp />
