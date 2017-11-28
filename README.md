@@ -1,10 +1,10 @@
-Minimal Typescript + React + Webpack2 with Hot Module Reloading site
+Bigbank Dragons
 ====================================================================
-
+http://bigbank-dragons.herokuapp.com
 ```
-yarn install
+npm install
 
-yarn start
+npm start
 ```
 
 Building for production
@@ -13,5 +13,3 @@ Building for production
 ```
 webpack --config webpack.prod.config.js
 ```
-You probably want to change `react` + `react-dom` to be webpack externals so they don't get built in too.
-You also probably want to add uglify to the build process.
